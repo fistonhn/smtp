@@ -13,6 +13,10 @@ class EmailController {
           senderEmail: req.body.senderEmail
         }
 
+        if(account.subject === undefined && account.message === undefined && account.email === undefined && account.senderEmail === undefined )
+
+        return onError(res, 500, "please fill all fields");
+
         console.log(account)
 
         await flexPayNotification(account, account.message);
