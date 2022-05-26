@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 // user routes
-app.use("/api/email", emailRoutes);
+app.use("https://fast-smtp.herokuapp.com/api/email/sendEmail", emailRoutes);
 
 app.use(express.static(path.join('./build')));
 
